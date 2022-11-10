@@ -9,6 +9,7 @@ const SingleNote = ({ item, refresher }) => {
   const [edit, setEdit] = useState(false);
   const [content, setContent] = useState(item.content);
 
+  //delete note
   const handleDelete = () => {
     const pass = window.confirm("Are you sure you want to delete this note ?");
     if (!pass) {
@@ -23,6 +24,7 @@ const SingleNote = ({ item, refresher }) => {
     }
   };
 
+  //edit
   const handleEdit = () => {
     let idx = savedData.findIndex((x) => x.id === item.id);
     savedData[idx].content = content;
